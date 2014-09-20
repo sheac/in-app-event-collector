@@ -1,3 +1,4 @@
 module.exports = {
     env: 'development',
+    redis_db: 1,
 };
