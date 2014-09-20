@@ -5,6 +5,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-express-server');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-todo');
 
     grunt.initConfig({
 
@@ -56,9 +57,24 @@ module.exports = function(grunt) {
                 reporter: require('jshint-stylish'),
             },
             all: [
-                'gruntfile.js',
+                'Gruntfile.js',
                 'src/**/*.js',
                 'test/**/*.js',
+                'config/**/*.js',
+                'coverage/**/*.js',
+                'server.js',
+            ],
+        },
+
+
+        todo: {
+            src: [
+                'Gruntfile.js',
+                'src/**/*.js',
+                'test/**/*.js',
+                'config/**/*.js',
+                'coverage/**/*.js',
+                'server.js',
             ],
         },
     });
@@ -66,5 +82,5 @@ module.exports = function(grunt) {
     grunt.registerTask('serve', [ 'express:dev', 'watch' ]);
     grunt.registerTask('test', [ 'env:test', 'express:dev', 'mochaTest' ]);
     grunt.registerTask('lint', 'jshint');
-    grunt.registerTask('default', [ 'lint', 'test' ]);
+    grunt.registerTask('default', [ 'lint', 'todo', 'test' ]);
 };
