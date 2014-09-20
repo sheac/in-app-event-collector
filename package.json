@@ -1,0 +1,40 @@
+{
+  "name": "in-app-event-collector",
+  "version": "0.0.0",
+  "description": "Simple version of a server that collects in-app events sent from (mobile) devices",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sheac/in-app-event-collector.git"
+  },
+  "author": "Shea Clare",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sheac/in-app-event-collector/issues"
+  },
+  "homepage": "https://github.com/sheac/in-app-event-collector",
+  "devDependencies": {
+    "blanket": "^1.1.6",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-env": "^0.4.1",
+    "grunt-mocha-test": "^0.12.0",
+    "jshint-stylish": "^1.0.0",
+    "mocha": "^1.21.4",
+    "should": "^4.0.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.8.2",
+    "express": "^4.9.3",
+    "grunt-env": "^0.4.1",
+    "grunt-express-server": "^0.4.19",
+    "lodash": "^2.4.1",
+    "node-strict": "^1.0.0",
+    "request": "^2.44.0",
+    "winston": "^0.8.0"
+  }
+}
