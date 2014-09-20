@@ -68,6 +68,30 @@ module.exports = function(grunt) {
 
 
         todo: {
+            options: {
+                marks: [
+                    {
+                        name: 'FIX',
+                        pattern: /FIXME/,
+                        color: 'red'
+                    },
+                    {
+                        name: 'TODO',
+                        pattern: /TODO/,
+                        color: 'yellow'
+                    },
+                    {
+                        name: 'NOTE',
+                        pattern: /NOTE/,
+                        color: 'blue'
+                    },
+                    {
+                        name: 'STUB',
+                        pattern: /STUB/,
+                        color: 'red',
+                    },
+                ],
+            },
             src: [
                 'Gruntfile.js',
                 'src/**/*.js',
