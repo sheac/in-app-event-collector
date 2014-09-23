@@ -2,14 +2,10 @@ module.exports = ApiResponder;
 
 var _ = require('lodash');
 
-function ApiResponder(res) {
-    this.res = res;
-    this.sendSuccess = function(data) {
-        this.res.status(200).send(data);
-    };
+function ApiResponder() {}
 
-    this.sendError = function(err) {
-        this.res.status(500).send(err);
-    };
-}
+ApiResponder.respond = function(res, stream, redCode) {
+    stream.onValue(_.bind(res.send, res.status(typeof retCode === 'number' ? retCode : 200)));
+    stream.onError(_.bind(res.send, res.status(500)));
+};
 

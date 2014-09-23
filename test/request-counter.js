@@ -17,15 +17,16 @@ after(function(done) {
 it('should count the number of requests sent', function(done) {
     var url = 'http://' + config.ip + ':' + config.port + '/requestcounter';
 
-    async.times(5, function(n, next) {
+    var numReqs = Math.ceil(Math.random() * 20),
+        expected = 1;
+    async.times(numReqs, function(reqIndex, next) {
         request(url, function(err, resp, body) {
             if (err) next(err);
 
             try {
                 body = JSON.parse(body);
-                var found = parseInt(body.num_reqs),
-                    expected = n + 1;
-                found.should.equal(expected);
+                parseInt(body.num_reqs).should.equal(expected);
+                expected += 1;
                 next();
             } catch(e) {
                 next(e);

@@ -1,20 +1,17 @@
 module.exports = RequestCounter;
 
+var Bacon = require('baconjs'),
+    _ = require('lodash');
+
 var redis = require('../resources/redis'),
     ApiResponder = require('../resources/api-responder');
 
 var NUM_REQS_KEY = 'NUM_REQS';
 
 RequestCounter.get = function(req, res) {
-    redis.incr(NUM_REQS_KEY, function(err, newVal) {
-        var apiResponder = new ApiResponder(res);
-        if (err) {
-            apiResponder.sendError(err);
-        } else {
-            var data = { num_reqs: newVal };
-            apiResponder.sendSuccess(data);
-        }
-    });
+    var newNum = Bacon.fromNodeCallback(_.bind(redis.incr, redis), NUM_REQS_KEY).toProperty(),
+        data = Bacon.combineTemplate({ num_reqs: newNum });
+    ApiResponder.respond(res, data);
 };
 
 function RequestCounter() {}
