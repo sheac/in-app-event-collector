@@ -3,7 +3,7 @@ in-app-event-collector
 
 Simple version of a server that collects in-app events sent from (mobile) devices
 
-The main idea is to borrow all the requirements from the old YMC Network app that served this purpose and then build version 2, but using the Functional Reactive Programming paradigm, instead of callbacks or promises. This effort has the blessing for current CTO of the company Dr. Sandy "Ing" Shen.
+The main idea is to borrow all the requirements from the old YMC Network app that served this purpose and then build version 2, but using the Functional Reactive Programming paradigm, instead of callbacks or promises. This effort has the blessing for CTO of the company Dr. Sandy "Ing" Shen.
 
 I feel like FRP is a great approach for this product, since the requirements are so easily conceptualized as incoming streams of data that need to be filtered, modified, merged, etc.
 
