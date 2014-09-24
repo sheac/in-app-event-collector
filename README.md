@@ -33,4 +33,11 @@ The following is a subset of the requirements of the existing project. My plan i
     * If an event is found, add the 3rd party tracker-specific attribution data and then store
   * The goal of storing the postback data is so that we can determine which traffic channels are responsible for which in-app events, and report this information to the marketing and production team 
 
-Of course, for now, the app is mostly just me getting my feet wet with server-side FRP, but stay tuned!
+
+---
+
+## Update 1. Rough Plan for App State Management
+
+The two things I need to manage at this point (that can fit in memory) are legal game ids (`YA0tokens`) and currency exchange rates (for generating `YA0USD`). The following diagram is a rough plan on how to accomplish that:
+
+![alt](https://github.com/sheac/in-app-event-collector/blob/master/imgs/Managing-State-From-Incoming-Data.png)
