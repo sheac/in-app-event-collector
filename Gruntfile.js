@@ -39,7 +39,7 @@ module.exports = function(grunt) {
                     reporter: 'spec',
                     require: 'coverage/blanket',
                 },
-                src: [ 'test/**/*.js' ],
+                src: [ 'test/tests/**/*.js' ],
             },
             coverage: {
                 options: {
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
                     quiet: true,
                     captureFile: 'coverage/coverage.html',
                 },
-                src: ['test/**/*.js'],
+                src: ['test/tests/**/*.js'],
             },
         },
 
@@ -103,7 +103,7 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('serve', [ 'express:dev', 'watch' ]);
-    grunt.registerTask('test', [ 'env:test', 'express:dev', 'mochaTest' ]);
+    grunt.registerTask('test', [ 'env:test', 'mochaTest' ]);
     grunt.registerTask('lint', 'jshint');
     grunt.registerTask('default', [ 'lint', 'todo', 'test' ]);
 };

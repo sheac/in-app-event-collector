@@ -1,4 +1,8 @@
+var MOCK_AUTH_SERVER_PORT = 3333;
+
 module.exports = {
     env: 'test',
     redis_db: 2,
+    mock_auth_server_port: MOCK_AUTH_SERVER_PORT,
+    auth_server_url_base: 'http://127.0.0.1:' + MOCK_AUTH_SERVER_PORT.toString(),
 };

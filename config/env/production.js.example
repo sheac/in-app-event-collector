@@ -3,4 +3,7 @@ module.exports = {
     ip: process.env.IP || '0.0.0.0',
     port: process.env.PORT || 8080,
     redis_db: 3,
+    auth_server_url_base: 'https://www.api.company.com',
+    this.auth_server_get_game_ids_url: this.auth_server_url_base +
+        this.auth_server_get_game_ids_url_path_part,
 };

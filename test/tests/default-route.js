@@ -1,7 +1,7 @@
 var should = require('should'),
     request = require('request');
 
-var config = require('../config/config');
+var config = require('../../config/config');
 
 it('should have a working endpoint', function(done) {
     var url = 'http://' + config.ip + ':' + config.port;

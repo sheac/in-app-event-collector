@@ -1,4 +1,7 @@
 module.exports = {
     env: 'development',
     redis_db: 1,
+    auth_server_url_base: 'https://www.api.test.company.com',
+    this.auth_server_get_game_ids_url: this.auth_server_url_base +
+        this.auth_server_get_game_ids_url_path_part,
 };

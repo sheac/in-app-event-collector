@@ -9,6 +9,7 @@ var app = express();
 
 require('./config/express')(app);
 require('./src/routes')(app);
+require('./src/resources/processing-params')(app);
 
 app.listen(config.port, config.ip, function() {
     winston.info('Express server listening on %s:%d, in %s mode',
